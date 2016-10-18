@@ -18,17 +18,22 @@
 if (0) is 1:
 loop until right bracket is found
 [
-	, (0) is input char
-	>+++
-	>+++++++++ temp counter at (2)
-	[<++++++++++>-] right bracket at (1)
-	< now compare (0) and (1)
-	<[>-<-]+
-	>[<->[-]]
-	<
-	[>+<[-]]+
-	>[<->-] (0) is 1 if not a right bracket
-	<
+	[
+		, (0) is input char
+		>+++
+		>+++++++++ temp counter at (2)
+		[<++++++++++>-] right bracket at (1)
+		< now compare (0) and (1)
+		<[>-<-]+
+		>[<->[-]]
+		<
+		[>+<[-]]+
+		>[<->-] (0) is 1 if not a right bracket
+		<
+	]
+	>>>[-]>[-]>,
+	[<+<+>>-]
+	<<<<<
 ]
 
 at (0)
@@ -52,10 +57,11 @@ this will always be the initial condition
 	>[<->[-]]
 	< at (0)
 	if (0) is 1 print (4) and set (4) to 0
-	[->>>>.[-]]
+	[->>>>.[-]<<<<]
+	>>>> at (4)
 
 	if (4) is 0 start loop over
-	if (4) is unchanged, check for comma {43}
+	if (4) is unchanged check for comma {44}
 	[
 		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
 		(4) is 0
@@ -71,12 +77,118 @@ this will always be the initial condition
 		< at (0)
 		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
 		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
-		>>
 	]
+	>>
 
 	pointer is at (4) repeat for the other ones
+	check for minus {45}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		check if (0) is minus
+		>+++
+		>++++++
+		[<+++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
+	]
+	>>
 
+	check for period {46}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		>++++
+		>++++++
+		[<+++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
+	]
+	>>
 
+	check for less than {60}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		>----
+		>++++++++
+		[<++++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
+	]
+	>>
+
+	check for greater than {62}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		>--
+		>++++++++
+		[<++++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
+	]
+	>>
+
+	check for left bracket {91}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		>+
+		>+++++++++
+		[<++++++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[<+>-]<<<<<>->] else move (5) to (4)
+	]
+	>>
+
+	check for right bracket {93}
+	[
+		[>+<<<<<+>>>>-] set (0) and (5) to what's in (4)
+		(4) is 0
+		<<<<
+		>+++
+		>+++++++++
+		[<++++++++++>-] put a plus at (1)
+		<< at (0)
+		[>-<-]+
+		>[<->[-]]
+		+ set up else
+		< at (0)
+		[->>>>>.[-]<<<<<>-]> if (0) is 1 print (5) and set (5) to 0
+		[<>>>>>[-]<<<<<>->] else move (5) to 0
+	]
+	>>
 
 	>, get next input at (0) and (4)
 	[
